@@ -1,0 +1,20 @@
+{
+  "name": "Search & Order Food Nearby",
+  "short_name": "t3mini",
+  "icons": [
+    {
+      "src": "app-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E30613",
+  "theme_color": "#E30613"
+}
