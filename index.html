@@ -35,18 +35,40 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #E30613; /* Background color of the page */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 40px 20px; /* Space at the top and bottom */
     }
 
     iframe {
-      width: 100vw;
-      height: 100vh;
+      width: 90%; /* Take up 90% of the screen width */
+      max-width: 800px; /* Limit the iframe width for large screens */
+      height: 70%; /* Take up 70% of the screen height */
+      max-height: 600px; /* Limit the iframe height */
       border: none;
+      background: white;
+      border-radius: 10px; /* Optional rounded corners for aesthetic */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for styling */
     }
   </style>
 </head>
 <body>
-  <!-- Full-Screen Botpress Embed -->
-  <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/21/16/20250121162532-GBIYMJOS.json"></iframe>
+  <div class="container">
+    <!-- Embed the full-screen Botpress Webchat -->
+    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/21/16/20250121162532-GBIYMJOS.json"></iframe>
+  </div>
 </body>
 </html>
