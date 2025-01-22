@@ -10,17 +10,24 @@
 
   <!-- Add-to-Home Screen Icon for iOS -->
   <link rel="apple-touch-icon" href="app-icon.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="app-icon.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="app-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="app-icon.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="app-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="app-icon.png">
 
   <!-- Add-to-Home Screen for Android -->
   <link rel="manifest" href="manifest.json">
 
+  <!-- Meta Description for Search Engines -->
+  <meta name="description" content="Search for food and order from nearby restaurants">
+
   <!-- Meta for Mobile Appearance -->
   <meta name="theme-color" content="#E30613">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="t3mini">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- iOS-specific Meta -->
+  <meta name="apple-mobile-web-app-title" content="Search Food Nearby">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <style>
     body, html {
@@ -31,59 +38,37 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f9f9f9;
+      background-color: #E30613; /* Background color of the page */
       font-family: Arial, sans-serif;
     }
 
-    .webchat {
+    .container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      width: 100vw;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 10px; /* Minimal spacing on all sides */
     }
 
     iframe {
-      height: 600px;
-      width: 400px;
+      width: 95%; /* Reduced space from left and right */
+      max-width: 900px; /* Limit iframe width on larger screens */
+      height: 90%; /* Reduced space from top and bottom */
+      max-height: 800px; /* Limit iframe height */
       border: none;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
+      background: white;
+      border-radius: 10px; /* Optional rounded corners for aesthetic */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for styling */
     }
   </style>
 </head>
 <body>
-  <div class="webchat">
-    <iframe
-      srcdoc='
-      <!doctype html>
-      <html lang="en">
-        <head></head>
-        <body>
-          <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-          <script defer>
-            window.botpress.on("webchat:ready", (conversationId) => {
-              botpress.open();
-            });
-            window.botpress.init({
-              "botId": "4a80f9bd-a777-4cc0-93b4-d0a3c26e7176",
-              "configuration": {
-                "composerPlaceholder": "Shu 3abelak?",
-                "botName": "t3mini",
-                "botAvatar": "https://files.bpcontent.cloud/2025/01/21/16/20250121162855-T7WKNFJC.png",
-                "botDescription": "Search for Food from Nearby Restaurants",
-                "color": "#E30613",
-                "variant": "solid",
-                "themeMode": "light",
-                "fontFamily": "inter",
-                "radius": 4
-              },
-              "clientId": "b0b4316d-f505-4bc4-a221-a77e8a5ea923"
-            });
-          </script>
-        </body>
-      </html>'
-    ></iframe>
+  <div class="container">
+    <!-- Embed the Botpress Webchat -->
+    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/21/16/20250121162532-GBIYMJOS.json"></iframe>
   </div>
 </body>
 </html>
